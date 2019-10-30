@@ -20,17 +20,21 @@
             margin: 300px auto;
             width: 180px;
             height: 150px;
-            background: rgb(255, 151, 151);
+            background:rgb(255, 151, 151);
             box-shadow: 
             0 0 20px 5px #fff,
             0 0 50px 5px #fff inset;
-
             border-radius: 60% 60% 56% 56%;
             animation: body 1.5s infinite alternate;
+            transition: background 0.5s;
         }
 
         div:hover {
             transform:scale(1,1);
+            background: 
+            linear-gradient(rgb(255,151,151)60%,transparent 0%)
+            ,radial-gradient(#fff 20%,transparent 0%)
+            ,rgb(255, 151, 151);
             transform-origin:bottom;
             animation: none;
         }
@@ -39,11 +43,12 @@
             content:"";
             display: block; 
             position: absolute;
+            left: 50px;
+            top: 80px;
             width: 10px;
             height: 10px;
             background: #fff;
-            margin: 50px;
-            margin-top: 80px;
+            border-radius: 50%;
             transform: scale(3,0.3);
             transform-origin: bottom;
             transition: 0.5s;
@@ -53,11 +58,12 @@
             content:"";
             display: block; 
             position: absolute;
+            right:50px;
+            top: 80px;
             width: 10px;
             height: 10px;
             background: #fff;
-            margin: 120px;
-            margin-top: 80px;
+            border-radius: 50%;
             transform: scale(3,0.3);
             transform-origin: bottom;
             transition: 0.5s;
@@ -73,12 +79,19 @@
 
         @keyframes body {
             from{
+                width: 200px;
+                height: 150px;
                 transform:scale(0.95,0.95);
                 transform-origin:bottom;
+                border-radius: 65% 65% 56% 56%;
+
             }
             to{
+                width: 180px;
+                height: 150px;
                 transform:scale(1,1);
                 transform-origin:bottom;
+                border-radius: 60% 60% 56% 56%;
             }
         }
     </style>
